@@ -49,7 +49,7 @@
     //     &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
     //   >;
     // };
-    fn {
+    navigation {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &kp LA(TAB) &trans &trans  &trans  &trans
