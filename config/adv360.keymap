@@ -52,7 +52,7 @@
     navigation {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &kp LA(F4) &trans &trans &trans &trans  &trans                                                       &trans &trans &kp LA(ESC) &trans &trans  &trans  &trans
+        &trans &kp LA(F4) &trans &trans &trans &trans  &trans                                                   &trans &kp LS(LC(TAB)) &kp LA(ESC) &kp LS(LA(ESC)) &kp LC(TAB)  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
