@@ -25,6 +25,20 @@
         bindings = <&kp>, <&kp>;
     };
   };
+
+
+  macros {
+    zed_em_kay: zed_em_kay {
+      label = "ZM_zed_em_kay";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings
+          = <&macro_press &kp LSHFT>
+          , <&macro_tap &kp Z &kp M &kp K>
+          , <&macro_release &kp LSHFT>
+          ;
+    };
+  };
   
   // macros {
   //   #include "macros.dtsi"
@@ -99,7 +113,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE)  &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &none &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &zed_em_kay &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
