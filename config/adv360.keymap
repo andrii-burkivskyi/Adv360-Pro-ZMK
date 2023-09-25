@@ -25,6 +25,18 @@
         bindings = <&kp>, <&kp>;
     };
   };
+  
+  // macros {
+  //   ls_lc_two: ls_lc_twoj {
+  //     label = "LS_LC";
+  //     compatible = "zmk,behavior-macro";
+  //     #binding-cells = <0>;
+  //     bindings
+  //       = <&kp LS(LC(T))>
+  //       ;
+
+  //   };
+  // };
 
   keymap {
     compatible = "zmk,keymap";
@@ -78,7 +90,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE)  &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &kp LC(LS(T)), LC(LS(K)) &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &kp LC(LS(T)) LC(LS(K)) &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
