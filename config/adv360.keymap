@@ -29,7 +29,7 @@
 
   macros {
     ls_lc_two: ls_lc_two {
-      label = "ZM_zed_em_kay";
+      label = "ZM_ls_lc_two";
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings
