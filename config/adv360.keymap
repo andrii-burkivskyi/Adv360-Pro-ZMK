@@ -28,7 +28,7 @@
 
 
   macros {
-    zed_em_kay: zed_em_kay {
+    ls_lc_two: ls_lc_two {
       label = "ZM_zed_em_kay";
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
@@ -39,10 +39,8 @@
           ;
     };
   };
-  
-  // macros {
-  //   #include "macros.dtsi"
 
+  // macros {
   //   ls_lc_two: ls_lc_two {
   //     label = "LS_LC";
   //     compatible = "zmk,behavior-macro-two-param";
