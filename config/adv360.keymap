@@ -1,6 +1,9 @@
 #define default_layer 0
 #define keypad   1
 #define navigation   2
+#define interact   3
+#define i_layer   4
+#define t_layer   5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -31,7 +34,7 @@
         &none &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
         &kp MINUS   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                           &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp EQUAL   &kp A     &kp S    &kp D    &kp F      &kp G  &kp GRAVE       &kp BSPC &kp LGUI &kp LALT  &kp SPACE           &kp LBKT &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo navigation                         &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &tog interact                         &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &none &none &none &none &none                                     &kp ESC &kp TAB  &mo keypad    &mo keypad &kp LCTRL &kp ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
     };
@@ -56,7 +59,7 @@
     interact {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &tog 0 &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &tog default_layer &trans &trans &trans &tog t_layer &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
@@ -74,7 +77,7 @@
     t_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &kp LC(GRAVE)  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
