@@ -34,9 +34,9 @@
       bindings
         = <&macro_press &kp LSHFT &kp LCTRL>
         , <&macro_param_1to1>
-        , <&macro_tap &kp MACRO_PLACEHOLDER>
+        , <&kp MACRO_PLACEHOLDER>
         , <&macro_param_2to1>
-        , <&macro_tap &kp MACRO_PLACEHOLDER>
+        , <&kp MACRO_PLACEHOLDER>
         , <&macro_release &kp LSHFT &kp LCTRL>
         ;
 
