@@ -26,26 +26,26 @@
     };
   };
   
-  macros {
-    #include "macros.dtsi"
+  // macros {
+  //   #include "macros.dtsi"
 
-    ls_lc_two: ls_lc_two {
-      label = "LS_LC";
-      compatible = "zmk,behavior-macro-two-param";
-      #binding-cells = <2>;
-      bindings
-        = <&macro_press &kp LSHFT &kp LCTRL>
-        , <&macro_param_1to1>
-        , <&macro_tap &kp MACRO_PLACEHOLDER>
-        , <&macro_release &kp MACRO_PLACEHOLDER>
-        , <&macro_param_2to1>
-        , <&macro_press &kp MACRO_PLACEHOLDER>
-        , <&macro_release &kp MACRO_PLACEHOLDER>
-        , <&macro_release &kp LSHFT &kp LCTRL>
-        ;
+  //   ls_lc_two: ls_lc_two {
+  //     label = "LS_LC";
+  //     compatible = "zmk,behavior-macro-two-param";
+  //     #binding-cells = <2>;
+  //     bindings
+  //       = <&macro_press &kp LSHFT &kp LCTRL>
+  //       , <&macro_param_1to1>
+  //       , <&macro_tap &kp MACRO_PLACEHOLDER>
+  //       , <&macro_release &kp MACRO_PLACEHOLDER>
+  //       , <&macro_param_2to1>
+  //       , <&macro_press &kp MACRO_PLACEHOLDER>
+  //       , <&macro_release &kp MACRO_PLACEHOLDER>
+  //       , <&macro_release &kp LSHFT &kp LCTRL>
+  //       ;
 
-    };
-  };
+  //   };
+  // };
 
   keymap {
     compatible = "zmk,keymap";
