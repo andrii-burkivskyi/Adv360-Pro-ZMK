@@ -26,17 +26,20 @@
     };
   };
   
-  // macros {
-  //   ls_lc_two: ls_lc_twoj {
-  //     label = "LS_LC";
-  //     compatible = "zmk,behavior-macro";
-  //     #binding-cells = <0>;
-  //     bindings
-  //       = <&kp LS(LC(T))>
-  //       ;
+  macros {
+    ls_lc_two: ls_lc_two {
+      label = "LS_LC";
+      compatible = "zmk,behavior-macro-two-param";
+      #binding-cells = <2>;
+      bindings
+        = <&macro_param_1to1>
+        , <&macro_press &kp LS(LC(MACRO_PLACEHOLDER))>
+        , <&macro_param_2to1>
+        , <&macro_press &kp LS(LC(MACRO_PLACEHOLDER))>
+        ;
 
-  //   };
-  // };
+    };
+  };
 
   keymap {
     compatible = "zmk,keymap";
@@ -90,7 +93,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE)  &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &kp LC(LS(T)) LC(LS(K)) &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &ls_lc_two T K &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
