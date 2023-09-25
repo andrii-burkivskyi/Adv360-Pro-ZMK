@@ -77,7 +77,7 @@
     t_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &kp LC(GRAVE)  &trans  &trans
+        &trans &tog default_layer &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &kp LC(GRAVE)  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
