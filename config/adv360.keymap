@@ -27,6 +27,8 @@
   };
   
   macros {
+    #include "macros.dtsi"
+
     ls_lc_two: ls_lc_two {
       label = "LS_LC";
       compatible = "zmk,behavior-macro-two-param";
