@@ -1,4 +1,4 @@
-#define LS_LC_T(k1, k2) &kp LS(LC(k1)) &kp LS(LC(k2))
+#define LS_LC_T(k1, k2) &kp LS(LC(k1)), &kp LS(LC(k2))
 #define default_layer 0
 #define keypad   1
 #define navigation   2
@@ -99,6 +99,9 @@
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
     };
+
+
+
     i_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
