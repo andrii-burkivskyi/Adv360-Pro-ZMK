@@ -139,9 +139,9 @@
     g_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &git_edit &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
+        &trans &trans &git_worktrees &git_edit &trans &git_toggle &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &git_stashes &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &git_branches                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
     };
