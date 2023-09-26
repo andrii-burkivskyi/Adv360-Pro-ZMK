@@ -37,6 +37,12 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(K))>;
     };
+    close_explorer: close_explorer {
+      label = "close_explorer";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(K))> , <&macro_tap &kp LS(LC(B))>;
+    };
   };
 
   keymap {
@@ -72,10 +78,10 @@
     ls_lc {
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans                                                                                                            &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &to LS(LC(Q))     &kp LS(LC(W))    &kp LS(LC(E))    &kp LS(LC(R))      &kp LS(LC(T))  &none                                                          &trans &kp LS(LC(Y)) &kp LS(LC(U)) &kp LS(LC(I)) &kp LS(LC(O)) &kp LS(LC(P)) &kp LS(LC(BSLH)) 
+        &trans &kp LS(LC(Q))     &kp LS(LC(W))    &kp LS(LC(E))    &kp LS(LC(R))      &kp LS(LC(T))  &none                                                          &trans &kp LS(LC(Y)) &kp LS(LC(U)) &kp LS(LC(I)) &kp LS(LC(O)) &kp LS(LC(P)) &kp LS(LC(BSLH)) 
         &trans &kp LS(LC(A))     &kp LS(LC(S))    &kp LS(LC(D))    &kp LS(LC(F))      &kp LS(LC(G))  &kp LS(LC(GRAVE))       &trans &trans &trans &trans            &trans &kp LS(LC(H)) &kp LS(LC(J)) &kp LS(LC(K)) &kp LS(LC(L)) &kp LS(LC(SEMI)) &kp LS(LC(SQT))
         &trans &kp LS(LC(Z))     &kp LS(LC(X))    &kp LS(LC(C))    &kp LS(LC(V))      &kp LS(LC(B))                                 &trans &trans                   &kp LS(LC(N)) &kp LS(LC(M))  &kp LS(LC(COMMA)) &kp LS(LC(DOT))  &kp LS(LC(FSLH)) &kp LS(LC(RSHFT))
-        &none &none &none &none &none                                                                                 &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
+        &none &none &none &none &none                                                                        &close_explorer &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
       >;
     };
     // fn {
