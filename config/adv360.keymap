@@ -1,4 +1,3 @@
-#define LS_LC_T(k1, k2) &kp LS(LC(k1)), &kp LS(LC(k2))
 #define default_layer 0
 #define keypad   1
 #define navigation   2
@@ -115,7 +114,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE)  &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans LS_LC_T(T, K) &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &ls_lc_two &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
