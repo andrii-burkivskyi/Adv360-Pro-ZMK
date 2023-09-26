@@ -53,8 +53,8 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(E))>;
     };
-    git_togle: git_togle {
-      label = "git_togle";
+    git_toggle: git_toggle {
+      label = "git_toggle";
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(T))>;
