@@ -29,7 +29,7 @@
 
   macros {
     ls_lc_two: ls_lc_two {
-      label = "ZM_ls_lc_two";
+      label = "ls_lc_two";
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
       bindings
@@ -114,7 +114,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE)  &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &none &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &ls_lc_two &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
