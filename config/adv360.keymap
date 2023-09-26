@@ -32,10 +32,19 @@
       label = "terminal_kill";
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      bindings
-        = <&macro_tap &kp LS(LC(T))>
-        , <&macro_tap &kp LS(LC(K))>
-        ;
+      bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(D))>;
+    };
+    terminal_next: terminal_next {
+      label = "terminal_next";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(J))>;
+    };
+    terminal_prev: terminal_prev {
+      label = "terminal_prev";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(K))>;
     };
   };
 
@@ -90,10 +99,10 @@
     t_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &terminal_kill &trans &trans &trans &trans        &trans &trans &trans &trans                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                 &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &terminal_kill &trans &trans &trans    &trans &trans &trans &trans                 &trans &trans &terminal_next &terminal_prev &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                          &trans &trans                        &kp LC(LS(GRAVE)) &trans &trans &trans &trans  &trans
+        &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
       >;
     };
     // fn {
