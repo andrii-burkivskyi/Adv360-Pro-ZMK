@@ -31,7 +31,7 @@
     ls_lc_two: ls_lc_two {
       label = "ZM_ls_lc_two";
       compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
+      #binding-cells = <1>;
       bindings
           = <&macro_press &kp LSHFT>
           , <&macro_tap &kp Z &kp M &kp K>
