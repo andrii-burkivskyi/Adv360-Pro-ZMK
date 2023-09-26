@@ -53,6 +53,30 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(E))>;
     };
+    git_togle: git_togle {
+      label = "git_togle";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(T))>;
+    };
+    git_stashes: git_stashes {
+      label = "git_stashes";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(S))>;
+    };
+    git_branches: git_branches {
+      label = "git_branches";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(B))>;
+    };
+    git_worktrees: git_worktrees {
+      label = "git_worktrees";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(W))>;
+    };
   };
 
   keymap {
