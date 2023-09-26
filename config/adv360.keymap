@@ -2,9 +2,6 @@
 #define keypad   1
 #define navigation   2
 #define ls_lc   3
-#define i_layer   4
-#define t_layer   5
-#define g_layer   6
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -29,12 +26,6 @@
 
 
   macros {
-    terminal_kill: terminal_kill {
-      label = "terminal_kill";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(D))>;
-    };
     terminal_next: terminal_next {
       label = "terminal_next";
       compatible = "zmk,behavior-macro";
@@ -46,36 +37,6 @@
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
       bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(K))>;
-    };
-    git_edit: git_edit {
-      label = "git_edit";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(E))>;
-    };
-    git_toggle: git_toggle {
-      label = "git_toggle";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(T))>;
-    };
-    git_stashes: git_stashes {
-      label = "git_stashes";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(S))>;
-    };
-    git_branches: git_branches {
-      label = "git_branches";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(B))>;
-    };
-    git_worktrees: git_worktrees {
-      label = "git_worktrees";
-      compatible = "zmk,behavior-macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(W))>;
     };
   };
 
@@ -105,7 +66,7 @@
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &kp LA(F4) &trans &trans &trans &trans  &trans                                                   &trans &kp LS(LC(TAB)) &kp LA(ESC) &kp LS(LA(ESC)) &kp LC(TAB)  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &terminal_next &terminal_prev  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &terminal_next &terminal_prev &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
     };
@@ -116,33 +77,6 @@
         &trans &kp LS(LC(A))     &kp LS(LC(S))    &kp LS(LC(D))    &kp LS(LC(F))      &kp LS(LC(G))  &kp LS(LC(GRAVE))       &trans &trans &trans &trans            &trans &kp LS(LC(H)) &kp LS(LC(J)) &kp LS(LC(K)) &kp LS(LC(L)) &kp LS(LC(SEMI)) &kp LS(LC(SQT))
         &trans &kp LS(LC(Z))     &kp LS(LC(X))    &kp LS(LC(C))    &kp LS(LC(V))      &kp LS(LC(B))                                 &trans &trans                   &kp LS(LC(N)) &kp LS(LC(M))  &kp LS(LC(COMMA)) &kp LS(LC(DOT))  &kp LS(LC(FSLH)) &kp LS(LC(RSHFT))
         &none &none &none &none &none                                                                                 &trans &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
-      >;
-    };
-    i_layer {
-      bindings = <
-        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
-      >;
-    };
-    t_layer {
-      bindings = <
-        &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                 &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &terminal_kill &trans &trans &trans    &trans &trans &trans &trans                 &trans &trans &terminal_next &terminal_prev &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                          &trans &trans                        &kp LC(LS(GRAVE)) &trans &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
-      >;
-    };
-    g_layer {
-      bindings = <
-        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &git_worktrees &git_edit &trans &git_toggle &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &git_stashes &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &git_branches                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
     };
     // fn {
