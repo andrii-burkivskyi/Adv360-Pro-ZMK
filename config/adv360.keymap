@@ -24,7 +24,6 @@
     };
   };
 
-
   macros {
     terminal_next: terminal_next {
       label = "terminal_next";
