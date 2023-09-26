@@ -47,6 +47,12 @@
       #binding-cells = <0>;
       bindings = <&macro_tap &kp LS(LC(T))> , <&macro_tap &kp LS(LC(K))>;
     };
+    git_edit: git_edit {
+      label = "git_edit";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
+      bindings = <&macro_tap &kp LS(LC(G))> , <&macro_tap &kp LS(LC(E))>;
+    };
   };
 
   keymap {
@@ -108,11 +114,11 @@
     };
     g_layer {
       bindings = <
-        &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                 &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &terminal_kill &trans &trans &trans    &trans &trans &trans &trans                 &trans &trans &terminal_next &terminal_prev &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                          &trans &trans                        &kp LC(LS(GRAVE)) &trans &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &git_edit &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &kp LC(ENTER)              &trans &trans &trans &trans &trans
       >;
     };
     // fn {
