@@ -32,6 +32,8 @@
       label = "ls_lc_two";
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
+      wait-ms = <20>;
+      tap-ms = <20>;
       bindings
           = <&macro_press &kp LSHFT>
           , <&macro_tap &kp Z &kp M &kp K>
@@ -92,15 +94,12 @@
     interact {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &to default_layer &trans &trans &sk LS(LC(R)) &tog t_layer &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &to default_layer &trans &trans &sk LS(LC(R))      &tog t_layer &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
     };
-
-
-
     i_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
@@ -114,7 +113,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &none &trans &trans &trans &trans        &trans &trans &trans &trans                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &ls_lc_two A &trans &trans &trans &trans        &trans &trans &trans &trans                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
