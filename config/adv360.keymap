@@ -4,6 +4,7 @@
 #define interact   3
 #define i_layer   4
 #define t_layer   5
+#define g_layer   6
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -81,10 +82,10 @@
     interact {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &to default_layer &trans &trans &sk LS(LC(R))      &tog t_layer &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
+        &trans &to default_layer &trans &trans &trans &tog t_layer &trans                                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &tog g_layer  &trans              &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                             &trans &trans                            &trans &trans &trans &trans &trans  &trans
+        &trans &trans &trans &trans &trans                       &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
     };
     i_layer {
@@ -97,6 +98,15 @@
       >;
     };
     t_layer {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                 &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &terminal_kill &trans &trans &trans    &trans &trans &trans &trans                 &trans &trans &terminal_next &terminal_prev &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                          &trans &trans                        &kp LC(LS(GRAVE)) &trans &trans &trans &trans  &trans
+        &trans &trans &trans &trans &trans                   &trans &trans &trans &trans &trans &trans          &trans &trans &trans &trans &trans
+      >;
+    };
+    g_layer {
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                 &trans &trans &trans &trans &trans  &trans  &trans
