@@ -28,38 +28,16 @@
 
 
   macros {
-    ls_lc_two: ls_lc_two {
-      label = "ls_lc_two";
-      compatible = "zmk,behavior-macro-one-param";
-      #binding-cells = <1>;
-      wait-ms = <20>;
-      tap-ms = <20>;
+    terminal_kill: terminal_kill {
+      label = "terminal_kill";
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
       bindings
-          = <&macro_press &kp LSHFT>
-          , <&macro_tap &kp Z &kp M &kp K>
-          , <&macro_release &kp LSHFT>
-          ;
+        = <&macro_tap &kp LS(LC(T))>
+        , <&macro_tap &kp LS(LC(K))>
+        ;
     };
   };
-
-  // macros {
-  //   ls_lc_two: ls_lc_two {
-  //     label = "LS_LC";
-  //     compatible = "zmk,behavior-macro-two-param";
-  //     #binding-cells = <2>;
-  //     bindings
-  //       = <&macro_press &kp LSHFT &kp LCTRL>
-  //       , <&macro_param_1to1>
-  //       , <&macro_tap &kp MACRO_PLACEHOLDER>
-  //       , <&macro_release &kp MACRO_PLACEHOLDER>
-  //       , <&macro_param_2to1>
-  //       , <&macro_press &kp MACRO_PLACEHOLDER>
-  //       , <&macro_release &kp MACRO_PLACEHOLDER>
-  //       , <&macro_release &kp LSHFT &kp LCTRL>
-  //       ;
-
-  //   };
-  // };
 
   keymap {
     compatible = "zmk,keymap";
@@ -113,7 +91,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &kp LC(GRAVE) &trans                                                &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &trans &ls_lc_two A &trans &trans &trans &trans        &trans &trans &trans &trans                       &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &terminal_kill &trans &trans &trans &trans        &trans &trans &trans &trans                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &kp LC(LS(GRAVE)) &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
