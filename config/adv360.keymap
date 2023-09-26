@@ -30,8 +30,8 @@
   macros {
     ls_lc_two: ls_lc_two {
       label = "ZM_ls_lc_two";
-      compatible = "zmk,behavior-macro-two-params";
-      #binding-cells = <2>;
+      compatible = "zmk,behavior-macro";
+      #binding-cells = <0>;
       bindings
           = <&macro_press &kp LSHFT>
           , <&macro_tap &kp Z &kp M &kp K>
