@@ -92,7 +92,7 @@
     interact {
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &to default_layer &trans &trans &trans &tog t_layer &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &to default_layer &trans &trans &sk LS(LC(R)) &tog t_layer &trans                                           &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
