@@ -142,7 +142,7 @@
         &trans &trans &trans &git_edit &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans  &trans        &trans &trans &trans &trans                    &trans &trans &trans &trans &trans  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &trans &trans &trans &trans  &trans
-        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &kp LC(ENTER)              &trans &trans &trans &trans &trans
+        &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans &trans &trans
       >;
     };
     // fn {
