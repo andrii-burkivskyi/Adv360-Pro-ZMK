@@ -2,6 +2,7 @@
 #define keypad   1
 #define navigation   2
 #define ls_lc   3
+#define ls_la   4
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -53,7 +54,7 @@
         &none &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
         &kp MINUS   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                           &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp EQUAL   &kp A     &kp S    &kp D    &kp F      &kp G  &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE           &kp LBKT &kp H  &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                         &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &lt ls_lc &mo ls_lc &to ls_lc                          &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &none &none &none &none &none                                     &kp ESC &kp TAB  &mo keypad       &mo keypad &kp LCTRL &kp ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
     };
@@ -81,16 +82,16 @@
         &trans &kp LS(LC(Q))     &kp LS(LC(W))    &kp LS(LC(E))    &kp LS(LC(R))      &kp LS(LC(T))  &none                                                          &trans &kp LS(LC(Y)) &kp LS(LC(U)) &kp LS(LC(I)) &kp LS(LC(O)) &kp LS(LC(P)) &kp LS(LC(BSLH)) 
         &trans &kp LS(LC(A))     &kp LS(LC(S))    &kp LS(LC(D))    &kp LS(LC(F))      &kp LS(LC(G))  &kp LS(LC(GRAVE))       &trans &trans &trans &trans            &trans &kp LS(LC(H)) &kp LS(LC(J)) &kp LS(LC(K)) &kp LS(LC(L)) &kp LS(LC(SEMI)) &kp LS(LC(SQT))
         &trans &kp LS(LC(Z))     &kp LS(LC(X))    &kp LS(LC(C))    &kp LS(LC(V))      &kp LS(LC(B))                                 &trans &trans                   &kp LS(LC(N)) &kp LS(LC(M))  &kp LS(LC(COMMA)) &kp LS(LC(DOT))  &kp LS(LC(FSLH)) &kp LS(LC(RSHFT))
-        &none &none &none &none &none                                                                        &close_explorer &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
+        &none &none &none &none &none                                                                        &to default_layer &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
       >;
     };
     ls_la {
       bindings = <
         &trans &trans &trans &trans &trans &trans &trans                                                                                                            &trans &trans &trans &trans &trans  &trans  &trans
-        &trans &kp LS(LC(Q))     &kp LS(LC(W))    &kp LS(LC(E))    &kp LS(LC(R))      &kp LS(LC(T))  &none                                                          &trans &kp LS(LC(Y)) &kp LS(LC(U)) &kp LS(LC(I)) &kp LS(LC(O)) &kp LS(LC(P)) &kp LS(LC(BSLH)) 
-        &trans &kp LS(LC(A))     &kp LS(LC(S))    &kp LS(LC(D))    &kp LS(LC(F))      &kp LS(LC(G))  &kp LS(LC(GRAVE))       &trans &trans &trans &trans            &trans &kp LS(LC(H)) &kp LS(LC(J)) &kp LS(LC(K)) &kp LS(LC(L)) &kp LS(LC(SEMI)) &kp LS(LC(SQT))
-        &trans &kp LS(LC(Z))     &kp LS(LC(X))    &kp LS(LC(C))    &kp LS(LC(V))      &kp LS(LC(B))                                 &trans &trans                   &kp LS(LC(N)) &kp LS(LC(M))  &kp LS(LC(COMMA)) &kp LS(LC(DOT))  &kp LS(LC(FSLH)) &kp LS(LC(RSHFT))
-        &none &none &none &none &none                                                                        &close_explorer &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
+        &trans &kp LS(LA(Q))     &kp LS(LA(W))    &kp LS(LA(E))    &kp LS(LA(R))      &kp LS(LA(T))  &none                                                          &trans &kp LS(LA(Y)) &kp LS(LA(U)) &kp LS(LA(I)) &kp LS(LA(O)) &kp LS(LA(P)) &kp LS(LA(BSLH)) 
+        &trans &kp LS(LA(A))     &kp LS(LA(S))    &kp LS(LA(D))    &kp LS(LA(F))      &kp LS(LA(G))  &kp LS(LA(GRAVE))       &trans &trans &trans &trans            &trans &kp LS(LA(H)) &kp LS(LA(J)) &kp LS(LA(K)) &kp LS(LA(L)) &kp LS(LA(SEMI)) &kp LS(LA(SQT))
+        &trans &kp LS(LA(Z))     &kp LS(LA(X))    &kp LS(LA(C))    &kp LS(LA(V))      &kp LS(LA(B))                                 &trans &trans                   &kp LS(LA(N)) &kp LS(LA(M))  &kp LS(LA(COMMA)) &kp LS(LA(DOT))  &kp LS(LA(FSLH)) &kp LS(LA(RSHFT))
+        &none &none &none &none &none                                                                        &to default_layer &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
       >;
     };
     // fn {
