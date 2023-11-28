@@ -29,18 +29,8 @@
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
+        quick_tap_ms = <125>;
         flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
-    rpi: require_prior_idle {
-        compatible = "zmk,behavior-hold-tap";
-        label = "REQUIRE_PRIOR_IDLE";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        quick-tap-ms = <200>;
-        require-prior-idle-ms = <125>;
         bindings = <&kp>, <&kp>;
     };
   };
@@ -74,7 +64,7 @@
         &none &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &to keypad                                                                         &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
         &kp MINUS   &kp Q     &kp W    &kp E    &kp R      &kp T  &sk LS(LCTRL)                                                                &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp EQUAL   &kp A     &kp S    &kp D    &kp F      &kp G  &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                &kp LBKT &kp H &kp J  &kp K     &kp L    &kp SEMI &kp SQT
-        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                          &kp N  &rpi LALT M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                          &kp N  &hm LALT M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &none &none &none &none &none                                     &kp ESC &kp TAB  &mo keypad       &mo keypad &kp LCTRL &kp ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
     };
