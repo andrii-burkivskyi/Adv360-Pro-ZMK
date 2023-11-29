@@ -20,9 +20,6 @@
   retro-tap;
 };
 
-&lt {
-  retro-tap;
-}
 
 / {
 
