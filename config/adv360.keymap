@@ -3,6 +3,7 @@
 #define navigation   2
 #define ls_lc   3
 #define ls_la   4
+#define alternative_layer   5
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
@@ -16,8 +17,12 @@
 };
 
 &mt {
-    retro-tap;
+  retro-tap;
 };
+
+&lt {
+  retro-tap;
+}
 
 / {
 
@@ -65,7 +70,7 @@
         &kp MINUS   &kp Q     &kp W    &kp E    &kp R      &kp T  &sk LS(LCTRL)                                                                &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
         &kp EQUAL   &kp A     &kp S    &kp D    &kp F      &kp G  &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                &kp LBKT &kp H &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                          &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &none &none &none &none &none                                     &kp ESC &kp TAB  &mo keypad       &mo keypad &kp LCTRL &mt LALT ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
+        &none &none &none &none &none                                     &mt LALT ESC &kp TAB  &mo keypad  &mo keypad &kp LCTRL &lt alternative_layer ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
     };
     keypad {
@@ -102,6 +107,15 @@
         &trans &kp LS(LA(A))     &kp LS(LA(S))    &kp LS(LA(D))    &kp LS(LA(F))      &kp LS(LA(G))  &kp LS(LA(GRAVE))       &trans &trans &trans &trans            &trans &kp LS(LA(H)) &kp LS(LA(J)) &kp LS(LA(K)) &kp LS(LA(L)) &kp LS(LA(SEMI)) &kp LS(LA(SQT))
         &trans &kp LS(LA(Z))     &kp LS(LA(X))    &kp LS(LA(C))    &kp LS(LA(V))      &kp LS(LA(B))                                 &trans &trans                   &kp LS(LA(N)) &kp LS(LA(M))  &kp LS(LA(COMMA)) &kp LS(LA(DOT))  &kp LS(LA(FSLH)) &kp LS(LA(RSHFT))
         &none &none &none &none &none                                                                        &to default_layer &trans &trans &trans &trans &trans     &trans &trans &trans &trans &trans
+      >;
+    };
+    alternative_layer {
+      bindings = <
+        &none &none          &none          &none       &none          &none       &none                                                                               &none  &none       &none         &none         &none         &none       &none
+        &none &kp LS(N1)     &kp LS(N2)     &kp LS(N3)  &kp LS(N4)     &kp LS(N5)  &none                                                                               &none  &kp LS(N6)  &kp LS(N6)    &kp LS(N6)    &kp LS(N6)    &kp LS(N6)  &none
+        &none &kp MINUS      &kp EQUAL      &kp BSPC    &kp GRAVE      &none       &none                 &kp BSPC  &kp LGUI  &kp LALT  &kp SPACE                       &none  &none       &kp LBKT      &kp RBKT      &kp BSLH      &kp SQT     &none
+        &none &kp LS(MINUS)  &kp LS(EQUAL)  &none       &kp LS(GRAVE)  &none                                 &mo navigation  &mo ls_lc                                 &none  &none       &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(BSLH)  &kp LS(SQT)
+        &none &none          &none          &none       &none                             &mt LALT ESC  &kp TAB  &mo keypad  &mo keypad  &kp LCTRL  &mt LSHFT ENTER    &none  &none       &none         &none         &none
       >;
     };
     // fn {
