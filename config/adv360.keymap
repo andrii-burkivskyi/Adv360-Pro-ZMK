@@ -17,6 +17,7 @@
 
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
+#define KP_FIVE(k1,k2,k3,k4,k5) &kp k1  &kp k2  &kp k3  &kp k4  &kp k5
 
 #define L_SHIFT 46
 #define R_SHIFT 59
@@ -80,7 +81,7 @@
       bindings = <
         &none      &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &to KEYPAD_LAYER                                                                                     &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
         &kp MINUS  &kp Q     &kp W    &kp E    &kp R      &kp T  &sk LS(LCTRL)                                                                            &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp EQUAL  HRML(A, S, D, F)      &kp G  &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                              &kp LBKT &kp H HRMR(J, K, L, SEMI) &kp SQT
+        &kp EQUAL  KP_FIVE(A, S, D, F, G) &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                              &kp LBKT KP_FIVE(H J, K, L, SEMI) &kp SQT
         &kp LSHFT  &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                                      &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &none &none &none &none &none                                     &mt LALT ESC &kp TAB  &mo KEYPAD_LAYER  &mo KEYPAD_LAYER &kp LCTRL &kp ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
