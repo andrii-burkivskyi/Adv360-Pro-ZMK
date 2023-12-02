@@ -36,6 +36,18 @@
         __VA_ARGS__                               \
     };
 
+#define LAYER_TAP(name, tap_flavor, tap_term, ...) \
+    name: name##_hold_tap {                       \
+        label           = #name;                  \
+        flavor          = #tap_flavor;            \
+        compatible      = "zmk,behavior-hold-tap";\
+        tapping-term-ms = <tap_term>;             \
+        quick-tap-ms    = <QUICK_TAP>;            \
+        #binding-cells  = <2>;                    \
+        bindings        = <&mo>, <&kp>;           \
+        __VA_ARGS__                               \
+    };
+
 #define SEQUENCE_MACRO(name, keys)                  \
     name: name##_macro {                   \
         label = #name;                     \
@@ -45,7 +57,6 @@
         #binding-cells = <0>;              \
         bindings = <keys>;                 \
     };
-
 
 &sk {
     release-after-ms = <2000>;
@@ -67,6 +78,8 @@
     // Positional hold-tap for Shift
     HOLD_TAP(lst, balanced, SHIFT_TAP, hold-trigger-key-positions = <R_KEYS>;)
     HOLD_TAP(rst, balanced, SHIFT_TAP, hold-trigger-key-positions = <L_KEYS>;)
+    // Positional layer-tap
+    HOLD_TAP(plt, tap-preferred, TAPPING_TERM, hold-trigger-key-positions = <R_SHIFT L_KEYS>;)
   };
 
   macros {
@@ -79,11 +92,11 @@
 
     default_layer {
       bindings = <
-        &none      &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &to KEYPAD_LAYER                                                                                     &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
+        &none      &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &to KEYPAD_LAYER                                                                         &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
         &kp MINUS  &kp Q     &kp W    &kp E    &kp R      &kp T  &sk LS(LCTRL)                                                                            &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp EQUAL  KP_FIVE(A, S, D, F, G) &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                              &kp LBKT KP_FIVE(H, J, K, L, SEMI) &kp SQT
-        &kp LSHFT  &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                                      &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &none &none &none &none &none                                     &mt LALT ESC &kp TAB  &mo KEYPAD_LAYER  &mo KEYPAD_LAYER &kp LCTRL &kp ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
+        &kp EQUAL  KP_FIVE(A, S, D, F, G) &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                                                   &kp LBKT KP_FIVE(H, J, K, L, SEMI) &kp SQT
+        &kp LSHFT  &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                                    &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
+        &none &none &none &none &none                                     &plt LALT ESC &kp TAB  &mo KEYPAD_LAYER  &mo KEYPAD_LAYER &kp LCTRL &kp ENTER    &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
     };
     keypad_layer {
