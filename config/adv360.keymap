@@ -18,21 +18,22 @@
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
 
-#define HOLD_TAP(name, tap_flavor, tap_term, ...) \
-name: name##_hold_tap {                       \
-    label           = #name;                  \
-    flavor          = #tap_flavor;            \
-    compatible      = "zmk,behavior-hold-tap";\
-    tapping-term-ms = <tap_term>;             \
-    quick-tap-ms    = <QUICK_TAP>;            \
-    #binding-cells  = <2>;                    \
-    bindings        = <&kp>, <&kp>;           \
-    __VA_ARGS__                               \
-};
 #define L_SHIFT 46
 #define R_SHIFT 59
 #define L_KEYS /*1*/0 1 2 3 4 5 6 /*2*/14 15 16 17 18 19 20 /*3*/28 29 30 31 32 33 34 35 36 /*4*/46 47 48 49 50 51 52 /*5*/60 61 62 63 64 65 66 67
 #define R_KEYS /*1*/7 8 9 10 11 12 13 /*2*/21 22 23 24 25 26 27 /*3*/37 38 39 40 41 42 43 44 45 /*4*/53 54 55 56 57 58 59 /*6*/68 69 70 71 72 73 74 75
+
+#define HOLD_TAP(name, tap_flavor, tap_term, ...) \
+    name: name##_hold_tap {                       \
+        label           = #name;                  \
+        flavor          = #tap_flavor;            \
+        compatible      = "zmk,behavior-hold-tap";\
+        tapping-term-ms = <tap_term>;             \
+        quick-tap-ms    = <QUICK_TAP>;            \
+        #binding-cells  = <2>;                    \
+        bindings        = <&kp>, <&kp>;           \
+        __VA_ARGS__                               \
+    };
 
 #define SEQUENCE_MACRO(name, keys)                  \
     name: name##_macro {                   \
@@ -79,7 +80,7 @@ name: name##_hold_tap {                       \
       bindings = <
         &none &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &to KEYPAD_LAYER                                                                                     &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
         &kp MINUS   &kp Q     &kp W    &kp E    &kp R      &kp T  &sk LS(LCTRL)                                                                            &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp EQUAL   HRML(&kp A     &kp S    &kp D    &kp F)      &kp G  &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                              &kp LBKT &kp H HRMR(&kp J  &kp K     &kp L    &kp SEMI) &kp SQT
+        &kp EQUAL  &kp A     &kp S    &kp D    &kp F      &kp G  &kp GRAVE       &kp BSPC &kp LGUI         &kp LALT  &kp SPACE                              &kp LBKT &kp H &kp J  &kp K     &kp L    &kp SEMI &kp SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                             &mo navigation   &mo ls_lc                                      &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
         &none &none &none &none &none                                     &mt LALT ESC &kp TAB  &mo KEYPAD_LAYER  &mo KEYPAD_LAYER &kp LCTRL &kp ENTER     &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
       >;
