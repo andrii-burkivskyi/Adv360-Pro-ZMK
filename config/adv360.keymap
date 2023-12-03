@@ -8,12 +8,13 @@
 #define SHIFT_TAP    170
 #define QUICK_TAP    105
 
-#define DEF_L 0
-#define PAD_L   1
-#define NAV_L   2
-#define S_C_L   3
-#define S_A_L   4
-#define ALT_L   5
+#define DEF_L     0
+#define PAD_L     1
+#define NAV_L     2
+#define S_C_L     3
+#define S_A_L     4
+#define ALT_L     5
+#define EXP_DEF_L 6
 
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
@@ -93,11 +94,11 @@
 
     DEF_L {
       bindings = <
-        &none      KP_FIVE(N1, N2, N3, N4, N5)  &to PAD_L                                                                                             &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &none
+        &to EXP_DEF_L      KP_FIVE(N1, N2, N3, N4, N5)  &to PAD_L                                                                                             &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &none
         &kp MINUS  KP_FIVE(Q,  W,  E,  R,  T)   &sk LS(LCTRL)                                                                                         &kp RBKT  KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
         &kp EQUAL  KP_FIVE(A,  S,  D,  F,  G)   &kp GRAVE                                  &kp BSPC &kp LGUI  &kp LALT  &kp SPACE                     &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
         &kp LSHFT  KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &mo S_C_L                                         KP_FIVE(N, M, COMMA, DOT, FSLH)      &kp RSHFT
-        &none &none &none &none &none                                      &llt ALT_L ESC &kp TAB  &mo PAD_L  &mo PAD_L &kp LCTRL &kp ENTER                     &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+        &none &none &none &none &none                                             &kp ESC &kp TAB  &mo PAD_L  &mo PAD_L &kp LCTRL &kp ENTER                     &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     PAD_L {
@@ -143,6 +144,15 @@
         &none &kp MINUS      &kp EQUAL      &kp BSPC    &kp GRAVE      &none       &none                       &none  &none  &none  &none                              &none  &none         &kp LBKT      &kp RBKT      &kp BSLH      &kp SQT     &none
         &none &kp LS(MINUS)  &kp LS(EQUAL)  &none       &kp LS(GRAVE)  &none                                          &none  &none                                     &none  &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(BSLH)  &kp LS(SQT)   &none       
         &none &none          &none          &none       &none                                           &none  &none  &none  &none  &none  &none                       &none  &none         &none         &none         &none
+      >;
+    };
+    EXP_DEF_L {
+      bindings = <
+        &none      KP_FIVE(N1, N2, N3, N4, N5)  &to PAD_L                                                                                             &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &none
+        &kp MINUS  KP_FIVE(Q,  W,  E,  R,  T)   &sk LS(LCTRL)                                                                                         &kp RBKT  KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
+        &kp EQUAL  KP_FIVE(A,  S,  D,  F,  G)   &kp GRAVE                                  &kp BSPC &kp LGUI  &kp LALT  &kp SPACE                     &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
+        &kp LSHFT  KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &mo S_C_L                                         KP_FIVE(N, M, COMMA, DOT, FSLH)      &kp RSHFT
+        &none &none &none &none &none                                      &llt ALT_L ESC &kp TAB  &mo PAD_L  &mo PAD_L &kp LCTRL &kp ENTER                     &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     // fn {
