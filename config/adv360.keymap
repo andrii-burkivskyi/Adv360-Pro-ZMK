@@ -93,11 +93,11 @@
 
     DEFAULT_LAYER {
       bindings = <
-        &none      &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &to KEYPAD_LAYER                                                                         &mo 3 &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &none
-        &kp MINUS  &kp Q     &kp W    &kp E    &kp R      &kp T  &sk LS(LCTRL)                                                                            &kp RBKT &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp EQUAL  KP_FIVE(A, S, D, F, G) &kp GRAVE       &kp BSPC &kp LGUI                                           &kp LALT  &kp SPACE                                                   &kp LBKT KP_FIVE(H, J, K, L, SEMI) &kp SQT
-        &kp LSHFT  &kp Z     &kp X    &kp C    &kp V      &kp B                                           &mo NAVIGATION_LAYER  &mo LS_LC_LAYER                                    &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &none &none &none &none &none                                     &llt ALTERNATIVE_LAYER ESC &kp TAB  &mo KEYPAD_LAYER  &mo KEYPAD_LAYER &kp LCTRL &kp ENTER    &kp DOWN &kp UP  &kp LEFT &kp RIGHT &none
+        &none      KP_FIVE(N1, N2, N3, N4, N5)  &to KEYPAD_LAYER                                                                                      &mo 3    KP_FIVE(N6, N7, N8, N9, N0)          &none
+        &kp MINUS  KP_FIVE(Q,  W,  E,  R,  T)   &sk LS(LCTRL)                                                                                         &kp RBKT KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
+        &kp EQUAL  KP_FIVE(A,  S,  D,  F,  G)   &kp GRAVE                                  &kp BSPC &kp LGUI  &kp LALT  &kp SPACE                     &kp LBKT KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
+        &kp LSHFT  kp_five(Z,  X,  C,  V,  B)                                           &mo NAVIGATION_LAYER  &mo LS_LC_LAYER                                  KP_FIVE(N, M, COMMA, DOT, FSLH)      &kp RSHFT
+        &none &none &none &none &none                   &llt ALTERNATIVE_LAYER ESC &kp TAB  &mo KEYPAD_LAYER  &mo KEYPAD_LAYER &kp LCTRL &kp ENTER             &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     KEYPAD_LAYER {
@@ -113,7 +113,7 @@
       bindings = <
         &trans &trans &trans &trans &trans &trans  &trans                                                       &trans &trans &trans &trans &trans  &trans  &trans
         &trans &kp LA(F4) &trans &trans &trans &trans  &trans                                                   &trans &kp LS(LC(TAB)) &kp LA(ESC) &kp LS(LA(ESC)) &kp LC(TAB)  &trans  &trans
-        &trans &trans &trans &trans &trans &trans  &kp GRAVE        &trans &trans &trans &trans                    &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &kp GRAVE        &trans &trans &trans &trans                 &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT  &trans  &trans
         &trans &trans &trans &trans &trans &trans                      &trans &trans                            &trans &terminal_next &terminal_prev &trans &trans  &trans
         &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans              &trans &trans &trans  &trans  &trans
       >;
