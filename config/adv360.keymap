@@ -158,11 +158,11 @@
     };
     POE_L {
       bindings = <
-        &to EXP_DEF_L  KP_FIVE(A,  S,  D,  F,  G)   &none                                                                                               &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &to DEF_L
-        &kp ESCAPE     KP_FIVE(N1, N2, N3, N4, N5)  &none                                                                                               &kp RBKT  KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
-        &kp TAB        KP_FIVE(Q,  W,  E,  R,  T)   &none                                    &kp SPACE &kp LGUI  &kp LALT  &kp SPACE                    &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
-        &kp LSHFT      KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &mo S_C_L                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)     &kp RSHFT
-        &none &none &none &none &none                                                 &kp ESC &kp TAB  &mo PAD_L  &mo PAD_L &kp LCTRL &kp ENTER                                 &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+        &none          &none &none &none &none &none  &none                                                                                               &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &to DEF_L
+        &kp ESCAPE     KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                               &kp RBKT  KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
+        &kp I          KP_FIVE(N1, N2, N3, N4, N5)    &none                            &lmt LCTRL SPACE &kp LGUI  &kp LALT  &kp SPACE                    &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
+        &kp LSHFT      KP_FIVE(Z,  X,  C,  V,  B)                                                      &kp LSHFT  &mo S_C_L                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)     &kp RSHFT
+        &none &none &none &none &none                                          &lmt LSHFT ESC &kp TAB  &mo PAD_L  &mo PAD_L &kp LCTRL &kp ENTER                                 &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     // fn {
