@@ -95,7 +95,7 @@
 
     DEF_L {
       bindings = <
-        &to EXP_DEF_L  KP_FIVE(N1, N2, N3, N4, N5)  &to PAD_L                                                                                             &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &none
+        &to EXP_DEF_L  KP_FIVE(N1, N2, N3, N4, N5)  &to PAD_L                                                                                             &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &to POE_L
         &kp MINUS      KP_FIVE(Q,  W,  E,  R,  T)   &sk LS(LCTRL)                                                                                         &kp RBKT  KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
         &kp EQUAL      KP_FIVE(A,  S,  D,  F,  G)   &kp GRAVE                                  &kp BSPC &kp LGUI  &kp LALT  &kp SPACE                     &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
         &kp LSHFT      KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &mo S_C_L                                         KP_FIVE(N,  M, COMMA, DOT, FSLH)     &kp RSHFT
