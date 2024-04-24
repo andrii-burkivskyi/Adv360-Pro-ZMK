@@ -10,9 +10,10 @@
 
 #define DEF_L     0
 #define EXP_DEF_L 1
-#define NAV_L     2
-#define ALT_L     3
-#define POE_L     4
+#define SWITCHED_L 2
+#define NAV_L     3
+#define ALT_L     4
+#define POE_L     5
 
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
@@ -102,10 +103,19 @@
     EXP_DEF_L {
       bindings = <
         &to DEF_L  KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
-        &kp ESC    KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                             &none     KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
-        &kp TAB    KP_FIVE(A,  S,  D,  F,  G)     &none                               &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none     KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
+        &kp ESC    KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                             &none         KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
+        &kp TAB    KP_FIVE(A,  S,  D,  F,  G)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
         &kp LSHFT  KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)                  &kp RSHFT
         &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &mo NAV_L &kp LCTRL &kp LEFT_ALT                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+      >;
+    };
+    SWITCHED_L {
+      bindings = <
+        &to DEF_L  KP_FIVE(N6, N7, N8, N9, N0)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N1, N2, N3, N4, N5)                       &none
+        &kp BSPC   KP_FIVE(Y,  U,  I,  O,  P)     &none                                                                                             &none         KP_FIVE(Q,  W,  E,  R,  T)                        &kp ESC
+        &kp ENTER  KP_FIVE(H,  J,  K,  L,  SEMI)  &none                               &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(A,  S,  D,  F,  G)                     &kp TAB
+        &kp LSHFT  KP_FIVE(N,  M, COMMA, DOT, FSLH)                                                &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(Z,  X,  C,  V,  B)                  &kp RSHFT
+        &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &mo NAV_L &kp LCTRL &kp LEFT_ALT                                &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     NAV_L {
