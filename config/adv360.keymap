@@ -8,12 +8,12 @@
 #define SHIFT_TAP    170
 #define QUICK_TAP    105
 
-#define DEF_L     0
-#define EXP_DEF_L 1
+#define DEF_L      0
+#define EXP_DEF_L  1
 #define SWITCHED_L 2
-#define NAV_L     3
-#define ALT_L     4
-#define POE_L     5
+#define NAV_L      3
+#define ALT_L      4
+#define POE_L      5
 
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
@@ -36,8 +36,8 @@
         __VA_ARGS__                               \
     };
 
-#define LAYER_TAP(name, tap_flavor, tap_term, ...) \
-    name: name##_hold_tap {                       \
+#define LAYER_TAP(name, tap_flavor, tap_term, ...)\
+    name: name##_layer_tap {                       \
         label           = #name;                  \
         flavor          = #tap_flavor;            \
         compatible      = "zmk,behavior-hold-tap";\
@@ -48,7 +48,7 @@
         __VA_ARGS__                               \
     };
 
-#define SEQUENCE_MACRO(name, keys)                  \
+#define SEQUENCE_MACRO(name, keys)         \
     name: name##_macro {                   \
         label = #name;                     \
         compatible = "zmk,behavior-macro"; \
@@ -106,7 +106,7 @@
         &kp ESC    KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                             &none         KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
         &kp TAB    KP_FIVE(A,  S,  D,  F,  G)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
         &kp LSHFT  KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)                  &kp RSHFT
-        &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &mo NAV_L &kp LCTRL &kp LEFT_ALT                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+        &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &kp LALT &kp LCTRL &kp LEFT_ALT                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     SWITCHED_L {
