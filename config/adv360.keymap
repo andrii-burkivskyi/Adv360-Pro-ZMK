@@ -9,11 +9,11 @@
 #define QUICK_TAP    105
 
 #define DEF_L      0
-#define EXP_DEF_L  1
-#define SWITCHED_L 2
-#define NAV_L      3
-#define ALT_L      4
-#define POE_L      5
+#define SWITCHED_L 1
+#define NAV_L      2
+#define ALT_L      3
+#define POE_L      4
+#define WASD_L     5
 
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
@@ -93,15 +93,6 @@
 
     DEF_L {
       bindings = <
-        &to EXP_DEF_L  KP_FIVE(N1, N2, N3, N4, N5)  &to NAV_L                                                                                             &mo 3     KP_FIVE(N6, N7, N8, N9, N0)          &to POE_L
-        &kp MINUS      KP_FIVE(Q,  W,  E,  R,  T)   &sk LS(LCTRL)                                                                                         &kp RBKT  KP_FIVE(Y,  U,  I,  O,  P)           &kp BSLH
-        &kp EQUAL      KP_FIVE(A,  S,  D,  F,  G)   &kp GRAVE                                  &kp BSPC &kp LGUI  &kp LALT  &kp SPACE                     &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
-        &kp LSHFT      KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &kp LS(LCTRL)                                        KP_FIVE(N,  M, COMMA, DOT, FSLH)     &kp RSHFT
-        &none &none &none &none &none                                                 &kp ESC &kp TAB  &mo NAV_L  &mo NAV_L &kp LCTRL &kp ENTER                                 &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
-      >;
-    };
-    EXP_DEF_L {
-      bindings = <
         &to DEF_L  KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
         &kp ESC    KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                             &none         KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
         &kp TAB    KP_FIVE(A,  S,  D,  F,  G)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
@@ -143,6 +134,15 @@
         &kp I          KP_FIVE(Q,  W,  E,  R,  T)     &none                            &lmt LCTRL SPACE &kp LGUI  &kp LALT  &kp SPACE                     &kp LBKT  KP_FIVE(H,  J,  K,  L,  SEMI)        &kp SQT
         &kp LSHFT      KP_FIVE(Z,  X,  C,  V,  B)                                                      &kp ENTER  &kp LS(LCTRL)                                      KP_FIVE(N,  M, COMMA, DOT, FSLH)     &kp RSHFT
         &none &none &none &none &none                                    &lmt LSHFT ESC &lmt LALT TAB  &mo NAV_L  &mo NAV_L &kp LCTRL &kp ENTER                                 &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+      >;
+    };
+    WASD_L {
+      bindings = <
+        &to DEF_L  KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
+        &kp ESC    KP_FIVE(T,  Q,  W,  E,  R)     &none                                                                                             &none         KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
+        &kp TAB    KP_FIVE(G,  A,  S,  D,  F)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
+        &kp LSHFT  KP_FIVE(B,  Z,  X,  C,  V)                                                      &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)                  &kp RSHFT
+        &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &kp LALT &kp LCTRL &kp LEFT_ALT                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     // fn {
