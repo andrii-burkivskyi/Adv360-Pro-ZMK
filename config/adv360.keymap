@@ -93,7 +93,7 @@
 
     DEF_L {
       bindings = <
-        &to DEF_L  KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
+        &to WASD_L  KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
         &kp ESC    KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                             &none         KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
         &kp TAB    KP_FIVE(A,  S,  D,  F,  G)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
         &kp LSHFT  KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)                  &kp RSHFT
