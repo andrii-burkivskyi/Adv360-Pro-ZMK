@@ -14,6 +14,7 @@
 #define ALT_L      3
 #define POE_L      4
 #define WASD_L     5
+#define LAYER_L    6 
 
 #define HRML(k1,k2,k3,k4) &lmt LCTRL k1  &lmt LALT k2  &lmt LGUI k3  &lst LSHFT k4
 #define HRMR(k1,k2,k3,k4) &rst RSHFT k1  &rmt RGUI k2  &rmt RALT k3  &rmt RCTRL k4
@@ -93,11 +94,11 @@
 
     DEF_L {
       bindings = <
-        &to WASD_L  KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
+        &to WASD_L KP_FIVE(N1, N2, N3, N4, N5)    &to NAV_L                                                                                         &to NAV_L     KP_FIVE(N6, N7, N8, N9, N0)                       &none
         &kp ESC    KP_FIVE(Q,  W,  E,  R,  T)     &none                                                                                             &none         KP_FIVE(Y,  U,  I,  O,  P)                        &kp BSPC
         &kp TAB    KP_FIVE(A,  S,  D,  F,  G)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
         &kp LSHFT  KP_FIVE(Z,  X,  C,  V,  B)                                                      &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)                  &kp RSHFT
-        &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &kp LALT &kp LCTRL &kp LEFT_ALT                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+        &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &kp LALT &kp LCTRL &mo LAYER_L                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
       >;
     };
     SWITCHED_L {
@@ -143,6 +144,15 @@
         &kp TAB    KP_FIVE(G,  A,  S,  D,  F)     &sl SWITCHED_L                      &kp SPACE &sk LS(LALT)  &sk LS(LCTRL)  &kp SPACE              &none         KP_FIVE(H,  J,  K,  L,  SEMI)                     &kp ENTER
         &kp LSHFT  KP_FIVE(B,  Z,  X,  C,  V)                                                      &mo NAV_L  &kp LS(LCTRL)                                       KP_FIVE(N,  M, COMMA, DOT, FSLH)                  &kp RSHFT
         &none &none &none &none &none                                         &mo ALT_L  &kp LCTRL  &kp LALT  &kp LALT &kp LCTRL &kp LEFT_ALT                            &kp DOWN &kp UP  &kp LEFT &kp RIGHT  &none
+      >;
+    };
+    LAYER_L {
+      bindings = <
+        &trans &trans &trans &trans &trans &trans  &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans                                                        &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans  &trans               &trans &trans &trans &trans              &trans &trans &trans &trans &trans  &trans  &trans
+        &trans &trans &trans &trans &trans &trans                              &trans &trans                     &trans &trans &trans &trans &trans  &trans
+        &trans &trans &trans &trans &trans                       &trans &trans &trans &trans &trans &trans        &trans &trans &trans &trans &trans
       >;
     };
     // fn {
